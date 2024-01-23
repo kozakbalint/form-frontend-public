@@ -1,0 +1,323 @@
+:root {
+	--color-accent: #386641;
+	--color-accent-2: #4e8a5a;
+	--color-background: #d9d9d9;
+	--color-foreground: #eceae6;
+	--color-input-bg: #f5f1e7;
+	--color-error: #ff3232;
+	--color-error-2: #ff5050;
+	--color-text: #001a23;
+	--color-text-50: #00000080;
+}
+
+body {
+	margin: 0;
+	background-color: var(--color-background);
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+}
+
+nav {
+	display: flex;
+	gap: 1.5em;
+	justify-content: center;
+	align-items: flex-end;
+	height: 3em;
+	width: 100%;
+	background-color: var(--color-foreground);
+}
+
+.nav-button {
+	text-align: center;
+	font-size: 1.5em;
+	color: var(--color-text);
+	border-bottom: medium solid var(--color-foreground);
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.nav-button:hover {
+	color: var(--color-accent);
+}
+
+.nav-button-active {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: var(--color-accent);
+	border-bottom: medium solid var(--color-accent);
+	border-radius: 0.125em;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	justify-content: center;
+}
+
+.dataset-form {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1em;
+	background-color: var(--color-foreground);
+	border-radius: 0.25em;
+	padding: 1em;
+}
+
+.dataset-form > div > * {
+	display: block;
+}
+
+.btn {
+	padding: 0.5em 1em;
+	border-radius: 0.25em;
+	text-align: center;
+	color: var(--color-foreground);
+	-webkit-user-select: none;
+	user-select: none;
+	background-color: var(--color-accent);
+}
+
+.btn:hover {
+	background-color: var(--color-accent-2);
+}
+
+.btn:disabled {
+	background-color: var(--color-background);
+}
+
+.dataset-form > div > input {
+	border-radius: 0.5em;
+	border: thin solid var(--color-text-50);
+	background-color: var(--color-input-bg);
+	padding: 0.5em 1em;
+}
+
+.dataset-form > div > input:invalid {
+	color: var(--color-error);
+	font-weight: bold;
+	border-radius: 0.5em;
+	border: medium solid var(--color-error);
+	background-color: var(--color-input-bg);
+	padding: 0.5em 1em;
+}
+
+.text-input {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.text-input > input {
+	width: 15em;
+}
+
+.num-input {
+	grid-row-start: 2;
+	grid-row-end: 3;
+	align-self: center;
+}
+
+.num-input > input {
+	width: 8em;
+}
+
+.add-dataset {
+	grid-row: 3;
+	grid-column: 2;
+	align-self: center;
+	justify-self: center;
+	width: fit-content;
+}
+
+.datasets,
+.scores {
+	overflow-x: auto;
+	background-color: var(--color-foreground);
+	border-radius: 0.25em;
+	padding: 1em;
+}
+
+table {
+	width: 100%;
+}
+
+table > thead {
+	background-color: var(--color-background);
+}
+
+table > thead > tr {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.25em;
+}
+
+table > tbody > tr {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 0.25em;
+	padding: 0.25em;
+}
+
+table > thead > tr > th {
+	width: 6em;
+	text-align: center;
+}
+
+table > tbody > tr > td {
+	width: 6em;
+	text-align: center;
+}
+
+.delete {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.delete > div {
+	background-color: var(--color-error);
+	color: var(--color-foreground);
+	border-radius: 0.25em;
+	width: 1.5em;
+	margin: auto;
+}
+
+.delete > div:hover {
+	background-color: var(--color-error-2);
+}
+
+.test {
+	display: flex;
+	gap: 1em;
+	flex-direction: column;
+	background-color: var(--color-foreground);
+	border-radius: 0.25em;
+	padding: 1em;
+}
+
+.run-test {
+	width: fit-content;
+}
+
+textarea {
+	resize: both;
+}
+
+textarea.error {
+	border: medium solid var(--color-error);
+}
+
+textarea.success {
+	border: medium solid var(--color-accent);
+}
+
+.scores-form {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 1em;
+	background-color: var(--color-foreground);
+	border-radius: 0.25em;
+	padding: 1em;
+}
+
+.scores-form > div > * {
+	display: block;
+}
+
+.scores-form > div > input {
+	border-radius: 0.25em;
+	border: thin solid var(--color-text-50);
+	background-color: var(--color-input-bg);
+	padding: 0.5em 1em;
+}
+
+.scores-form > div > select {
+	border-radius: 0.25em;
+	border: thin solid var(--color-text-50);
+	background-color: var(--color-input-bg);
+	padding: 0.5em 1em;
+}
+
+.scores-form > div > input:invalid {
+	border-radius: 0.25em;
+	border: 0.1em solid var(--color-error);
+	background-color: var(--color-input-bg);
+	padding: 0.5em 1em;
+}
+
+.scores-form > div > select:invalid {
+	border-radius: 0.25em;
+	border: 0.1em solid var(--color-error);
+	background-color: var(--color-input-bg);
+	padding: 0.25em 0.5em;
+}
+
+.add-score {
+	grid-column: span 2;
+	justify-self: center;
+	align-self: center;
+	width: fit-content;
+}
+
+@media (max-width: 1200px) {
+	.container {
+		width: 80%;
+	}
+}
+@media (max-width: 992px) {
+	.container {
+		width: 90%;
+	}
+}
+@media (max-width: 768px) {
+	.container {
+		width: 100%;
+	}
+
+	.dataset-form {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+		gap: 1em;
+		background-color: var(--color-foreground);
+		border-radius: 0.25em;
+		padding: 1em;
+	}
+
+	.text-input {
+		align-self: center;
+		justify-self: center;
+		grid-column: 1;
+		grid-row: auto;
+	}
+
+	.text-input > input {
+		width: 15em;
+	}
+
+	.num-input {
+		align-self: center;
+		justify-self: center;
+		grid-column: 1;
+		grid-row: auto;
+	}
+
+	.num-input > input {
+		width: 15em;
+	}
+
+	.add-dataset {
+		grid-row: 5;
+		grid-column: 1;
+		align-self: center;
+		justify-self: center;
+		width: fit-content;
+	}
+}
